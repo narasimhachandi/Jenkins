@@ -1,10 +1,10 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image', '.']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image', '.']
 
   # Push the image to Google Container Registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/streamlit-image']
 
 options:
   logging: CLOUD_LOGGING_ONLY
